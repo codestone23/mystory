@@ -1,0 +1,301 @@
+*{
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box; 
+}
+body{
+    background: linear-gradient(45deg, #6f86d6, #89f7fe);
+    position: relative;
+    font-size: 16px;
+    user-select: none;
+    background-repeat: no-repeat;
+}
+.info__header{
+    display: flex;
+}
+:root{
+    --contain-radius:24px;
+}
+/* Golbal */
+.contain{
+    border-radius: var(--contain-radius);
+    padding: 30px;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+}
+#my-info{
+    padding-top: 50px;
+    position: relative;
+    z-index: 9;
+}
+/* Left info */
+.header__left{
+    display: flex;
+    border-right: 1px solid #000;
+    flex-basis: 50%;
+}
+.header__left .avatar{
+    width: 160px;
+    height: 160px;
+    background-image: url(../imgs/family//myself.jpg);
+    background-size: cover;
+    border-radius: var(--contain-radius);
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    background-repeat: no-repeat;
+}
+.header__left .right{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0px 24px;
+}
+.header__left .right .header__name{
+    font-weight: bold;
+    font-size: 28px;
+}
+.header__left .right .description{
+    padding-top: 8px;
+}
+.header__left .right .contact__icon{
+    margin-top: 45px;
+    text-align: center;
+}
+.header__left .right .contact__icon a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.contact__icon .icon{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: var(--bgColor);
+    text-align: center;
+    line-height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color .1s linear;
+    margin: 4px;
+    font-size: 1.1rem;
+}
+.contact__icon .icon:hover {
+    background-color: var(--bgColor);
+    color: white !important;
+}
+.contact__icon .icon:hover .icon__move{
+    display: block;
+}
+@keyframes contact-icon-move {
+    0%{
+        opacity: 0;
+        transform: translateX(-50%) translateY(0%);
+        top: 0;
+    }
+    60%{
+        opacity: .7;
+        transform: translateX(-50%) translateY(-100%);
+        top: -18px;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(-50%) translateY(-100%);
+        top: -12px;
+    }
+}
+.contact__icon .icon .icon__move{
+    position:absolute;
+    left: 50%;
+    top: -12px;
+    border-radius: 12px;
+    background-color: var(--bgColor);
+    color: white;
+    padding: 4px 8px;
+    line-height: normal;
+    font-size: .9em;
+    font-weight: bold;
+    transform: translateX(-50%) translateY(0%);
+    opacity: 0;
+    display: none;
+    animation:contact-icon-move .25s .2s linear forwards;
+}
+.contact__icon .icon .icon__move::after{
+    position:inherit;
+    content: '';
+    border: 5px solid transparent;
+    border-top-color:var(--bgColor);
+    bottom: 0px; 
+    transform: translateY(calc(100% - 1px)) translateX(-50%);
+    left: 50%;
+}
+/* Right info */
+
+.header__right{
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    padding: 0 24px;
+    flex-direction: column;
+}
+.header__right .right-info{
+    margin: 12px 0;
+}
+.header__right .right-info .name{
+    font-weight: bold;
+    font-size: .9em;
+    text-transform: uppercase;
+    padding-bottom:4px;
+    color: rgb(121, 120, 120);
+}
+.header__right .right-info .description{
+    word-break: break-all;
+}
+
+/* my info body */
+
+/* slider */
+
+.info__body{
+    padding-top: 24px;
+}
+#nav {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    list-style: none;
+    padding: 16px;
+    width: fit-content;
+    transition: all .5s .2s,border-radius 0s;
+}
+@keyframes nav-fixed {
+    from{
+        top: 0;
+    }
+    to{
+        top: 24px;
+    }
+}
+#nav .fixed{
+    position:fixed;
+    top:24px;
+    animation: nav-fixed .4s;
+}
+#nav li{
+    position: relative;
+    width: 120px;
+    padding: 12px 0;
+    margin: 12px 0;
+    border-radius: var(--contain-radius);
+    background-color:rgba(255, 255, 255, .55) ;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: box-shadow .4s linear;
+}
+#nav li.active{
+    background: linear-gradient(135deg,rgb(224, 37, 199),rgb(255, 188, 246),rgb(255, 212, 249)) !important;
+}
+#nav li::after{
+    content: '';
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: skewX(-20deg) translateX(-110%);
+    background-image: linear-gradient(100deg,rgba(1,1,1,0) 30%,white);
+    animation: nav-item .7s .1s forwards;
+    display: none;
+}
+@keyframes nav-item {
+    from{
+        transform: skewX(-20deg) translateX(-110%);
+    }
+    to{
+        transform: skewX(-20deg) translateX(110%);
+    }
+}
+#nav li:hover{
+    background: linear-gradient(135deg,rgb(255, 85, 232),rgb(250, 189, 243),rgb(253, 223, 250));
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+#nav li:hover::after{
+    display: block;
+}
+#nav .nav-item{
+    text-align: center;
+}
+#nav .nav-item .title{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 8px;
+    color: rgb(47, 45, 45);
+}
+
+/* Content */
+.info__body #content{
+    margin-bottom: 50px;
+}
+#content{
+    transition: all .4s;
+}
+.content-item{
+    display: none;
+}
+.content-item.active{
+    display: block;
+}
+.content-item .sub-item{
+    margin-top: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* picture family */
+#container {
+    width: 500px;
+    height: 500px;
+    /* background-color: rgb(28, 110, 110); */
+    position: relative;
+    margin:10px auto;
+    border: 1px solid #000;
+    border-radius: 15%;
+    background-image: url(https://img.thuthuatphanmem.vn/uploads/2018/10/08/khung-anh-doi-dep_093105337.jpg);
+    background-size: cover;
+    max-width: 100%;
+}
+img{
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
