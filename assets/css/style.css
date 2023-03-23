@@ -263,7 +263,7 @@ body{
     height: 4px;
     width: 90px;
     background: linear-gradient(90deg,#1e9600, #fff200, #ff0000);
-    top: 0;
+    left: 0;
     bottom: 0;
     border-radius: 8px;
 }
@@ -276,6 +276,86 @@ body{
     height: 3px;
     background: linear-gradient(90deg,#1a2a6c, #b21f1f, #fdbb2d);
 }
+/* Product */
+.sub-item .i-did{
+    text-align: center;
+    padding: 12px;
+}
+.i-did .img{
+    border-radius: var(--contain-radius);
+    overflow: hidden;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+.i-did .img img{
+    display: block;
+    width: 100%;
+    transition: transform .3s linear;
+}
+.i-did .img:hover img{
+    transform: scale(1.1);
+}
+.i-did .title{
+    display: inline-block;
+    padding: 8px 0;
+}
+/* slider */
+.slider {
+    position: relative;
+}
+.slider .slide-main{
+    border-radius: var(--contain-radius);
+    height: 200px;
+    background: linear-gradient(-90deg,#e1eec3, #f05053);
+    overflow: hidden;
+}
+.slider .slide-main:active{
+    cursor:grabbing;
+}
+.slide-main .slide-bar{
+    display: flex;
+    height: inherit;
+    transform: translateX(-100%);
+}
+.slide-bar .slide-item{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 12px 36px;
+}
+.slide-item .avatar{
+    width: 90px;
+    min-width: 90px;
+    height: 90px;
+    border-radius: var(--contain-radius);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: rgba(244, 255, 83, 0.384) 0px 2px 4px 0px, rgba(244, 255, 83, 0.644) 0px 2px 16px 0px;
+    position: relative;
+}
+.slide-item .avatar::after{
+    content: "\f521";
+    font-family: 'FontAwesome';
+    position:absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-90%);
+    font-size: 25px;
+    color: rgb(255, 207, 74,.7);
+}
+.slide-item .content{
+    padding-left: 24px;
+    font-size: .9em;
+}
+.slide-item .content p{
+    padding-top: 8px;
+    font-weight: bold;
+}
+
+
+
 
 
 
@@ -311,7 +391,7 @@ body{
     background-size: cover;
     max-width: 100%;
 }
-img{
+#container img{
     position: absolute;
     border-radius: 50%;
     width: 100px;
