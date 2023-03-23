@@ -646,7 +646,7 @@ body{
     }
 }
 /* mobile */
-@media (max-width:739px){
+@media (max-width:739px) and (min-width:500px){
     .contain{
         padding: 20px;
     }
@@ -683,12 +683,20 @@ body{
     }
     #nav li{
         width: 20%;
-        margin: 0;
+        min-width: 100px;
+        margin: 0 12px;
+        padding: 12px 0;
         background: rgba(255,255,255,.85);
     }
     #nav li lord-icon{
-        width: 30px !important;
-        height: 30px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+    #nav li:first-child{
+        margin-left: 50px;
+    }
+    #nav li:last-child{
+        margin-right: 50px;
     }
     #nav .title{
         font-size: .7em;
@@ -730,6 +738,32 @@ body{
         -webkit-line-clamp: 3;
     }
 
+}
+@media (max-width:500px){
+    #nav{
+        position:fixed !important;
+        z-index: 999;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+        padding: 8px 0;
+        background: rgba(165, 187, 236, 0.7);
+        animation: menu-mobile .5s linear !important;
+    }
+    #nav li{
+        width: 20%;
+        margin: 0;
+        background: rgba(255,255,255,.85);
+    }
+    #nav li lord-icon{
+        width: 35px !important;
+        height: 35px !important;
+    }
+    #nav .title{
+        font-size: .7em;
+        padding-top: 4px !important;
+    }
 }
 @keyframes nav-style-tablet {
     50%{
