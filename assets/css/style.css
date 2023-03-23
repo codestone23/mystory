@@ -686,11 +686,49 @@ body{
         margin: 0;
         background: rgba(255,255,255,.85);
     }
+    #nav li lord-icon{
+        width: 30px !important;
+        height: 30px !important;
+    }
     #nav .title{
-        font-size: 12px;
+        font-size: .7em;
+        padding-top: 4px !important;
     }
 
-
+    /* slider */
+    .slider .slide-main{
+        height: 300px;
+    }
+    .slide-item.avatar{
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+    }
+    .slide-item .content{
+        padding-left: 12px;
+    }
+    /* entertain */
+    .entertain{
+        height: fit-content;
+        padding: 12px;
+    }
+    .entertain::after{
+        height: 12px;
+    }
+    .entertain .content *{
+        font-size: .9em;    
+        text-align: left;
+        padding-bottom: 0 !important;
+    }
+    .entertain .avatar{
+        width: 130px;
+        min-width: 130px;
+        height: 80px;
+        margin-right: 12px;
+    }
+    .entertain .content p{
+        -webkit-line-clamp: 3;
+    }
 
 }
 @keyframes nav-style-tablet {
