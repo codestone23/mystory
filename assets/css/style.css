@@ -686,7 +686,12 @@ body{
         margin: 0;
         background: rgba(255,255,255,.85);
     }
-    
+    #nav .title{
+        font-size: 12px;
+    }
+
+
+
 }
 @keyframes nav-style-tablet {
     50%{
