@@ -168,6 +168,7 @@ body{
     padding: 16px;
     width: fit-content;
     transition: all .5s .2s,border-radius 0s;
+    /* display: none; */
 }
 
 #nav.fixed{
@@ -588,7 +589,118 @@ body{
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
-
+/* pc */
+@media (min-width:1240px){
+    .nav{
+        width: auto;
+        min-width: 163px;
+    }
+}
+/* tablet */
+@media (max-width:1039px){
+    #my-info{
+        padding-top: 100px;
+    }
+    /* header */
+    .info__header{
+        flex-direction: column;
+    }
+    /* header left */
+    .header__left{
+        flex-direction: column;
+        border-right: none;
+        align-items: center;
+    }
+    .header__left .avatar{
+        transform: translateY(-50%);
+        margin-bottom: -50px;
+        width: 150px;
+        height: 150px;
+    }
+    .header__left .right .description,.header__name{
+        text-align: center;
+    }
+    .header__left .right .contact__icon{
+        margin-top: 34px;
+    }
+    /* header right */
+    .header__right{
+        padding-top: 24px;
+    }
+    /* body */
+    .info__body{
+        flex-direction: column;
+    }
+    .info__body #content{
+        margin-top: 4px;
+    }
+    #nav{
+        position: relative !important;
+        top: initial !important;
+        flex-direction: row;
+        width: auto;
+        animation: nav-style-tablet .5s;
+    }
+    #nav li{
+        width: 120px;
+    }
+}
+/* mobile */
+@media (max-width:739px){
+    .contain{
+        padding: 20px;
+    }
+    /* header */
+    .header__left .avatar{
+        width: 130px;
+        height: 130px;
+    }
+    
+    .header__left .right .header__name{
+        text-align: center;
+        font-size: 24px;
+    }
+    .header__left .right .description{
+        font-size: .9em;
+    }
+    .header__right .right-info{
+        margin: 8px 0;
+    }
+    /* body */
+    .info__body #content{
+        margin-bottom: 100px;
+    }
+    #nav{
+        position:fixed !important;
+        z-index: 999;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+        padding: 8px 0;
+        background: rgba(165, 187, 236, 0.7);
+        animation: menu-mobile .5s linear !important;
+    }
+    #nav li{
+        width: 20%;
+        margin: 0;
+        background: rgba(255,255,255,.85);
+    }
+    
+}
+@keyframes nav-style-tablet {
+    50%{
+        transform: scale(1.07);
+    }
+}
+@keyframes menu-mobile {
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
 
 
 
