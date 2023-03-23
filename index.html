@@ -79,7 +79,7 @@
         <div class="info__body row">
             <div class="col l-2 m-12 s-12">
                 <ul id="nav" class="contain fixed">
-                    <li class="nav-item active">
+                    <li class="nav-item ">
                         <lord-icon src="https://cdn.lordicon.com/dqxvvqzi.json" trigger="hover" style="width:50px; height:50px"></lord-icon>
                         <div class="title">bản thân</div>
                     </li>
@@ -91,7 +91,7 @@
                         <lord-icon src="https://cdn.lordicon.com/ilpmnyul.json" trigger="hover" colors="primary:#121331,secondary:#d1faf0" style="width:50px;height:50px"></lord-icon>
                         <div class="title">mục tiêu</div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <lord-icon src="https://cdn.lordicon.com/hqrgkqvs.json" trigger="hover" style="width:50px;height:50px"></lord-icon>
                         <div class="title">sở thích</div>
                     </li>
@@ -226,7 +226,7 @@
                                     </div>
                                 </div>
                                 <div class="slide-dot">
-                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="dot"></span><span class="dot"></span><span class="dot active"></span><span class="dot"></span>
                                 </div>
                                 <div id="prev-slide">
                                     <i class="fas fa-angle-left"></i>
@@ -241,7 +241,7 @@
                     <div class="content-item">
                         <div class="sub-item">
                             <h1 class="big-title">Học Vấn</h1>
-                            <h2 class="icon-title">
+                            <h2 class="icon-title small-title">
                                 <i class="fa-solid fa-school"></i>
                                 Giáo dục
                             </h2>
@@ -267,7 +267,7 @@
                             </div>
                         </div>
                         <div class="sub-item">
-                            <h2 class="icon-title">
+                            <h2 class="icon-title small-title">
                                 <i class="fa-solid fa-book"></i>
                                 Kiến thức
                             </h2>
@@ -300,19 +300,19 @@
                         </div>
                         <div class="sub-item">
                             <h2 class="icon-title"></h2>
-                            <div class="skill">
-                                <div class="skill-progress"></div>
-                                <div class="skill-progress"></div>
-                                <div class="skill-progress"></div>
-                                <div class="skill-progress"></div>
+                            <div class="skill" style="--animation-progress: skill-progress 1s forwards">
+                                <div class="skill-progress" style="--skill-name: 'C++'; --skill-percent: '70%'; --percent: 70%"></div>
+                                <div class="skill-progress" style="--skill-name: 'HTML'; --skill-percent: '65%'; --percent: 65%"></div>
+                                <div class="skill-progress" style="--skill-name: 'CSS'; --skill-percent: '45%'; --percent: 45%"></div>
+                                <div class="skill-progress" style="--skill-name: 'JS'; --skill-percent: '35%'; --percent: 35%"></div>
                             </div>
                         </div>
                     </div>
                     <!-- mục tiêu -->
                     <div class="content-item">
                         <div class="sub-item">
-                            <h2 class="big-title"></h2>
-                            <div class="small-title"></div>
+                            <h2 class="big-title">Mục Tiêu</h2>
+                            <div class="small-title">Hiện Tại</div>
                             <div class="timeline">
                                 <h4 class="title">Học ổn định kiến thức trên trường</h4>
                                 <div class="time">Sau khi học xong và trước ngày mới</div>
@@ -350,19 +350,19 @@
                         </div>
                     </div>
                     <!-- sở thích -->
-                    <div class="content-item active">
+                    <div class="content-item favorite active">
                         <div class="sub-item">
                             <h1 class="big-title">
                                 <i class="fa-solid fa-star"></i>
                                 Sở thích
                             </h1>
-                            <h2 class="icon-title">
+                            <h2 class="icon-title small-title">
                                 <i class="fa-solid fa-gamepad"></i>
                                 Chơi game
                             </h2>
                             <a href="https://teamfighttactics.leagueoflegends.com/vi-vn/?utm_source=riotbar&utm_medium=productcard%2Bwww.leagueoflegends.com&utm_campaign=tft&utm_content=tft_keyart_set8release&_gl=1*19s9sss*_ga*MTc0ODA2MDIwNS4xNjc5MTU0MDc4*_ga_3HM18VBM2V*MTY3OTE1NDA3Ny4xLjEuMTY3OTE1NDYzNC42MC4wLjA.&_ga=2.258473930.1338423279.1679154079-1748060205.1679154078">
                                 <div class="entertain">
-                                    <div class="avatar"></div>
+                                    <div class="avatar" style="background-image: url(./assets/imgs/games/tft.png);"></div>
                                     <div class="content">
                                         <h3>Đấu trường chân lý - TFT</h3>
                                         <p>Triệu quân và chiến đấu - Lựa chọn, dàn trận và nâng cấp các tướng Liên Minh Huyền Thoại yêu thích của bạn trong trận chiến sống còn này. Tàn phá với tộc Ác Quỷ, giao tranh bằng hệ Đấu Sĩ hay biến đổi khôn lường với hệ Hóa Hình, quyết định hoàn toàn thuộc về bạn.</p>
@@ -371,7 +371,7 @@
                             </a>
                             <a href="https://www.leagueoflegends.com/vi-vn/?utm_source=riotbar&utm_medium=productcard%2Bwww.leagueoflegends.com&utm_campaign=lol&utm_content=lol_keyart01">
                                 <div class="entertain">
-                                    <div class="avatar"></div>
+                                    <div class="avatar" style="background-image: url(./assets/imgs/games/lol.png);"></div>
                                     <div class="content">
                                         <h3>Liên minh huyền thoại - LOL</h3>
                                         <p>Liên Minh Huyền Thoại là một trò chơi trực tuyến đa người chơi với chế độ chơi tương tác độc đáo.Trong game,người chơi sẽ vào vai một nhân vật chiến đấu trong một trận đấu 5 người chống lại đội ngũ khác. Trò chơi này được thiết kế để đánh giá kỹ năng tác động nhiều đến chiến thuật, kết hợp với kỹ năng cá nhân và phối hợp đội hình.</p>
@@ -380,7 +380,7 @@
                             </a>
                             <a href="https://playvalorant.com/vi-vn/?utm_source=riotbar&utm_medium=productcard%2Bwww.leagueoflegends.com&utm_campaign=val&utm_content=ep5act1">
                                 <div class="entertain">
-                                    <div class="avatar"></div>
+                                    <div class="avatar" style="background-image: url('./assets/imgs/games/valo.png')"></div>
                                     <div class="content">
                                         <h3>VALORANT</h3>
                                         <p>Mang phong cách và trải nghiệm cá nhân tới đấu trường cạnh tranh toàn cầu. Sử dụng kỹ năng đấu súng cùng với lối tư duy chiến thuật sắc bén với hai phe tấn công và phòng thủ, thành bại được định đoạt chỉ trong 13 vòng đấu. Với chỉ 1 mạng mỗi vòng đấu, sự nhanh nhẹn và quyết đoán sẽ là yếu tố giúp bạn sống sót.</p>
@@ -389,13 +389,13 @@
                             </a>
                         </div>
                         <div class="sub-item">
-                            <h2 class="icon-title">
+                            <h2 class="icon-title small-title">
                                 <i class="fa-solid fa-gamepad"></i>
                                 Vừa chơi vừa học
                             </h2>
                             <a href="https://vim-adventures.com/">
                                 <div class="entertain">
-                                    <div class="avatar"></div>
+                                    <div class="avatar" style="background-image: url('./assets/imgs/games/vim.png');"></div>
                                     <div class="content">
                                         <h3>Learn Vim</h3>
                                         <p>Vim là một trình text editor, được tích hợp sẵn trên một số distro của Linux, giúp bạn có thể chỉnh sửa text. Giao diện của nó gọn gàng, đơn giản.Vừa có thể chơi game,vừa có thể thực hành sử dụng Vim</p>
@@ -403,8 +403,8 @@
                                 </div>
                             </a>
                             <a href="https://flexboxfroggy.com/#vi">
-                                <div class="entertain">
-                                    <div class="avatar"></div>
+                                <div class="entertain" >
+                                    <div class="avatar" style="background-image: url('./assets/imgs/games/flexbox.png');"></div>
                                     <div class="content">
                                         <h3>Flexbox Froggy</h3>
                                         <p>là một trò chơi mã nguồn mở miễn phí giúp bạn tìm hiểu các thuộc tính và vận dụng chúng qua các level. Tại đây họ giúp bạn luyện tập các thuộc tính cơ bản của Flexbox. Từ đó, từ ban đầu đơn giản và đến các cấp độ cao thì càng khó hơn.</p>
@@ -413,7 +413,7 @@
                             </a>
                             <a href="https://codepip.com/games/grid-garden/">
                                 <div class="entertain">
-                                    <div class="avatar"></div>
+                                    <div class="avatar" style="background-image: url(./assets/imgs/games/grid.png);"></div>
                                     <div class="content">
                                         <h3>Grid Garden</h3>
                                         <p>Trò chơi này hoạt động theo cách tương tự nhưng dạy bạn cách sử dụng CSS Grid. Đó là một tính năng tương đối mới nhưng nó bắt kịp nhanh và sử dụng Grid Garden rất dễ dàng, bạn hoàn toàn có thể học.</p>
