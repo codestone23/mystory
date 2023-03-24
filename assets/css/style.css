@@ -171,7 +171,7 @@ body{
     /* display: none; */
 }
 
-#nav.fixed{
+.fixed{
     position:fixed;
     top:24px;
     animation: nav-fixed .4s;
@@ -244,7 +244,7 @@ body{
     transition: all .4s;
 }
 .content-item{
-    /* display: none; */
+    display: none;
 }
 .content-item.active{
     display: block;
@@ -736,7 +736,7 @@ body{
     }
     /* family */
     #container{
-        height: 353px;
+        height: 357px;
     }
     #container img{
         position: absolute;
@@ -744,14 +744,14 @@ body{
         width: 70px;
         height: 70px;
     }
-} 
-@media (max-width:739px) and (min-width:500px){
+    /* nav */
     #nav{
         position:fixed !important;
         z-index: 999;
         left: 0;
         right: 0;
         bottom: 0;
+        margin: 0;
         border-radius: 0;
         padding: 8px 0;
         background: rgba(165, 187, 236, 0.7);
@@ -759,10 +759,18 @@ body{
     }
     #nav li{
         width: 20%;
+        background: rgba(255,255,255,.85);
+    }
+    #nav .title{
+        font-size: .7em;
+        padding-top: 4px !important;
+    }
+} 
+@media (max-width:739px) and (min-width:500px){
+    #nav li{
         min-width: 100px;
         margin: 0 12px;
         padding: 12px 0;
-        background: rgba(255,255,255,.85);
     }
     #nav li lord-icon{
         width: 50px !important;
@@ -774,35 +782,14 @@ body{
     #nav li:last-child{
         margin-right: 50px;
     }
-    #nav .title{
-        font-size: .7em;
-        padding-top: 4px !important;
-    }
 }
 @media (max-width:500px){
-    #nav{
-        position:fixed !important;
-        z-index: 999;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 0;
-        padding: 8px 0;
-        background: rgba(165, 187, 236, 0.7);
-        animation: menu-mobile .5s linear !important;
-    }
     #nav li{
-        width: 20%;
-        margin: 0;
-        background: rgba(255,255,255,.85);
+        margin: 0;  
     }
     #nav li lord-icon{
         width: 35px !important;
         height: 35px !important;
-    }
-    #nav .title{
-        font-size: .7em;
-        padding-top: 4px !important;
     }
 }
 @keyframes nav-style-tablet {
@@ -818,6 +805,8 @@ body{
         transform: translateY(0%);
     }
 }
+
+
 
 
 
