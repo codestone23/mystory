@@ -671,6 +671,9 @@ body{
     .contain{
         padding: 20px;
     }
+    .i-did .title{
+        padding: 0;
+    }
     /* header */
     .header__left .avatar{
         width: 130px;
@@ -693,7 +696,7 @@ body{
     }
     /* slider */
     .slider .slide-main{
-        height: 300px;
+        height: 250px;
     }
     .slide-item.avatar{
         width: 70px;
@@ -706,7 +709,7 @@ body{
     /* entertain */
     .entertain{
         height: fit-content;
-        padding: 12px;
+        padding: 2px 12px;
     }
     .entertain::after{
         height: 12px;
