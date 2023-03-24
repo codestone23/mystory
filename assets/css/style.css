@@ -581,6 +581,7 @@ body{
 .entertain .content h3{
     text-transform: capitalize;
     padding-bottom: 4px;
+    margin: 0;
 }
 .entertain .content p{
     display: -webkit-box; 
@@ -588,6 +589,7 @@ body{
     overflow: hidden;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    margin-top: 4px;
 }
 /* picture family */
 #container {
@@ -709,7 +711,7 @@ body{
     /* entertain */
     .entertain{
         height: fit-content;
-        padding: 2px 12px;
+        padding: 12px 12px;
     }
     .entertain::after{
         height: 12px;
