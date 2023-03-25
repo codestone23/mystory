@@ -1,24 +1,35 @@
+
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 // background
-var container = document.getElementById("container");
+let container = $(".sub-item #container")
 
-var images = ["./assets/imgs/family/1.jpg","./assets/imgs/family/2.jpg","./assets/imgs/family/4.jpg","./assets/imgs/family/5.jpg","./assets/imgs/family/6.jpg","./assets/imgs/family/7.jpg","./assets/imgs/family/8.jpg","./assets/imgs/family/3.jpg","./assets/imgs/family/9.jpeg","./assets/imgs/family/10.jpeg"];
+let images = $$("#container .imgs")
 
-for (var i = 0; i < images.length; i++) {
-  var img = document.createElement("img");
-  img.src = images[i];
-  container.appendChild(img);
-  moveImage(img);
+for (let i of images) {
+  moveImage(i);
 }
+function clickImgs(){
+  images.forEach((item,index) =>{
+    item.addEventListener('mousemove', function() {
+      item.style.transform = 'scale(1.2)'; 
+    });
+    item.addEventListener('mouseleave', function() {
+      item.style.transform = 'scale(1)'; 
+    });
+  })
+}
+clickImgs();
 
 function moveImage(img) {
-  var maxX = container.offsetWidth - img.width;
-  var maxY = container.offsetHeight - img.height;
-  var posX = Math.floor(Math.random() * maxX);
-  var posY = Math.floor(Math.random() * maxY);
-  var dirX = Math.random() < 0.5 ? -1 : 1;
-  var dirY = Math.random() < 0.5 ? -1 : 1;
-  var speedX = Math.floor(Math.random() * 1.5) + 1;
-  var speedY = Math.floor(Math.random() * 1.5) + 1;
+    let maxX = container.offsetWidth - img.width;
+    let maxY = container.offsetHeight - img.height;
+    let posX = Math.floor(Math.random() * maxX);
+    let posY = Math.floor(Math.random() * maxY);
+    let dirX = Math.random() < 0.5 ? -1 : 1;
+    let dirY = Math.random() < 0.5 ? -1 : 1;
+    let speedX = Math.floor(Math.random() * 1.5) + 1;
+    let speedY = Math.floor(Math.random() * 1.5) + 1;
   setInterval(function() {
     posX += speedX * dirX;
     posY += speedY * dirY;
@@ -32,9 +43,8 @@ function moveImage(img) {
     img.style.top = posY + "px";
   }, 20);
 }
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
 
+// my story
 const MY_STORY = {
   // nav
     nav: $(".info__body #nav"),
@@ -106,60 +116,13 @@ const MY_STORY = {
     },
     // function handleSlider
     handleSlider: function(){
-      // config
-        let timeTransition = 500
-        let timeAutoNext = 7000
-
-        let _this = this;
-        let slideItemLength = this.slideItems.length - 2;
-        let indexSlide =  1
-        let setAutoNext ;
-        // create slide dot
-        let dotElement = this.handleSlideDot(slideItemLength)
-        // event next,prev slide
-        this.nextSlide.onclick = () =>{
-          next();
-        }
-        this.prevSlide.onclick = () =>{
-          prev();
-        }
-        autoNextSlide();
-        // function
-        function autoNextSlide(){
-          setAutoNext = setTimeout(()=>{
-              next();
-          },timeAutoNext)
-        }
-        function next() {
-          indexSlide++;
-          updateSlide();
-        }
-        function prev() {
-          indexSlide--;
-          updateSlide();
-        }
-        function updateSlide(){
-          // reset auto next slide
-          clearInterval(setAutoNext);
-			    autoNextSlide();
-          // update style
-          Object.assign(_this.slideBar.style, {
-            transition: `transform ${timeTransition}ms linear`,
-            transform: `translateX(-${indexSlide * 100}%)`,
-          });
-          // active dot
-          _this.slideDot.querySelector(".dot.active")
-          .classList.remove("active");
-          if (indexSlide > slideItemLength)
-            dotElement[0].classList.add("active");
-          else if (indexSlide <= 0)
-            dotElement[slideItemLength - 1].classList.add("active");
-          else dotElement[indexSlide - 1].classList.add("active");
-            }
+      
     }
 };
 
 MY_STORY.start();
+
+
 
 
 
