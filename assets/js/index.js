@@ -88,12 +88,17 @@ const MY_STORY = {
     // hide item
     handleHide : function(){
         this.buttonUp.onclick = () =>{
+          this.content.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        })
           this.afterItem.forEach((item,index)=>{
             item.classList.add("hide-item")
         })
         this.buttonUp.setAttribute("style","display:none")
         this.buttonDown.removeAttribute("style")
         }
+        
     },
     // function handleClickNav
     handleClickNav: function(){
@@ -143,7 +148,7 @@ const MY_STORY = {
     },
     // function handleSlider
     handleSlider: function(){
-      
+        
     }
 };
 
