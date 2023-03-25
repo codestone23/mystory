@@ -27,7 +27,21 @@ const MY_STORY = {
     afterItem:$$(".sub-item .after-item"),
     buttonDown: $(".sub-item .button-down"),
     buttonUp: $(".sub-item .button-up"),
-
+    // book one
+    numberItemOne: $$(".one-book .slide-page .number"),
+    pageFooterOne:$(".one-book .page-footer .slide-page"),
+    pageItemOne: $$(".one-book .page-item"),
+    pageOne: $(".page.one-book"),
+    // book two
+    numberItemTwo: $$(".two-book .slide-page .number"),
+    pageFooterTwo:$(".two-book .page-footer .slide-page"),
+    pageTwo: $(".page.two-book"),
+    pageItemTwo: $$(".two-book .page-item"),
+    // transfer
+    transfer:$(".sub-item .transfer-type"),
+    transferItem: $$(".transfer-type .fa-solid"),
+    page:$(".sub-item.big-page"),
+    pageItem: $$(".sub-item .page"),
 
 
     start: function(){
@@ -40,6 +54,50 @@ const MY_STORY = {
       };
       this.handleMore();
       this.handleHide();
+      this.handlePageOne();
+      this.handlePageTwo();
+      this.handleTransferPage();
+    },
+    // transfer page
+    handleTransferPage:function(){
+      this.transferItem.forEach((item,index)=>{
+        item.onclick = () =>{
+          if(item.classList.contains("active")) return
+          this.transfer.querySelector(".active").classList.remove("active")
+          item.classList.add("active")
+          this.page.querySelector(".page.active").classList.remove("active")
+          this.pageItem[index].classList.add("active")
+        }
+      })
+    },
+    // page
+    handlePageOne: function(){
+      this.numberItemOne.forEach((item,index)=>{
+        item.onclick = () =>{
+          if(item.classList.contains("active")) return
+
+          this.pageFooterOne.querySelector(".active").classList.remove("active")
+          item.classList.add("active")
+          this.pageOne.querySelector(".page-item.active")
+                .classList.remove("active")
+          this.pageItemOne[index].classList
+                .add("active") 
+        }
+      })
+    },
+    handlePageTwo: function(){
+      this.numberItemTwo.forEach((item,index)=>{
+        item.onclick = () =>{
+          if(item.classList.contains("active")) return
+
+          this.pageFooterTwo.querySelector(".active").classList.remove("active")
+          item.classList.add("active")
+          this.pageTwo.querySelector(".page-item.active")
+                .classList.remove("active")
+          this.pageItemTwo[index].classList
+                .add("active")  
+        }
+      })
     },
     // moveImage
     handleMoveImage: function(img) {

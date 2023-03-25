@@ -288,6 +288,7 @@ body{
     border-radius: var(--contain-radius);
     color: #ffffff;
     display: none;
+    transition: all .5s linear;
 }
 .sub-item #button:hover{
     
@@ -661,6 +662,91 @@ body{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     transition: transform .3s ease-out;
 }
+/* books */
+.page{
+    display: none;
+}
+.big-page .page.active{
+    display: block;
+}
+.page .entertain{
+    height: 200px;
+    max-height: 200px;
+}
+.page .entertain .avatar{
+    min-width: 114px;
+    height: 160px;
+}
+.page .entertain .content p{
+    -webkit-line-clamp: 6;
+}
+/* page icon */
+.page-footer .slide-page{
+    text-align: center;
+    margin-top: 20px;
+}
+.slide-page .number{
+    background-color: #3098cc;
+    color: #81c5f0;
+    margin: 0 12px;
+    border-radius: 50%;
+    padding: 10px 14px;
+}
+.slide-page .number:hover{
+    background-color: #00587C;
+}
+.slide-page .number.active{
+    color: white;
+}
+.page .page-item{
+    display: none;
+}
+.page .page-item.active{
+    display: block;
+}
+/* transfer */
+.sub-item .transfer-type{
+    text-align: center;
+    margin: 20px;
+}
+.transfer-type .fa-solid{
+    margin-left: 15px;
+}
+.transfer-type .fa-solid.active{
+    color: #009fff;
+}
+.sub-item .page.active{
+    display: block;
+}
+/* book 2 */
+.two-book .page-item{
+    display: none;
+}
+.two-book .page-item.active{
+    display: block;
+}
+.page.two-book .entertain{
+    margin-top: 20px;
+}
+.page.two-book .entertain .content p{
+    -webkit-line-clamp: 4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* pc */
 @media (min-width:1240px){
     .nav{
@@ -858,6 +944,7 @@ body{
         transform: translateY(0%);
     }
 }
+
 
 
 
