@@ -77,14 +77,20 @@ const MY_STORY = {
       this.numberItemOne.forEach((item,index)=>{
         item.onclick = () =>{
           if(item.classList.contains("active")) return
-
+          // page one
           this.pageFooterOne.querySelector(".active").classList.remove("active")
           item.classList.add("active")
           this.pageOne.querySelector(".page-item.active")
                 .classList.remove("active")
           this.pageItemOne[index].classList
                 .add("active") 
-          console.log(item)
+          console.log((item,index))
+          // page two
+          this.pageFooterTwo.querySelector(".active").classList.remove("active")
+          this.numberItemTwo[index].classList.add("active")
+          this.pageTwo.querySelector(".page-item.active").classList.remove("active")
+          this.pageItemTwo[index].classList
+                .add("active") 
         }
       })
     },
@@ -92,14 +98,20 @@ const MY_STORY = {
       this.numberItemTwo.forEach((item,index)=>{
         item.onclick = () =>{
           if(item.classList.contains("active")) return
-
+          // page two
           this.pageFooterTwo.querySelector(".active").classList.remove("active")
           item.classList.add("active")
           this.pageTwo.querySelector(".page-item.active")
                 .classList.remove("active")
           this.pageItemTwo[index].classList
                 .add("active")  
-                console.log(item)
+                console.log((item,index))
+          // page one
+          this.pageFooterOne.querySelector(".active").classList.remove("active")
+          this.numberItemOne[index].classList.add("active")
+          this.pageOne.querySelector(".page-item.active").classList.remove("active")
+          this.pageItemOne[index].classList
+                .add("active")
         }
       })
     },
