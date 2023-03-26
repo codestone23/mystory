@@ -44,6 +44,7 @@ const MY_STORY = {
     pageItem: $$(".sub-item .page"),
 
 
+
     start: function(){
       this.handleClickNav();
       this.handleScroll();
@@ -57,6 +58,7 @@ const MY_STORY = {
       this.handlePageOne();
       this.handlePageTwo();
       this.handleTransferPage();
+      this.handlePage();
     },
     // transfer page
     handleTransferPage:function(){
@@ -82,6 +84,7 @@ const MY_STORY = {
                 .classList.remove("active")
           this.pageItemOne[index].classList
                 .add("active") 
+          console.log(item)
         }
       })
     },
@@ -96,6 +99,7 @@ const MY_STORY = {
                 .classList.remove("active")
           this.pageItemTwo[index].classList
                 .add("active")  
+                console.log(item)
         }
       })
     },

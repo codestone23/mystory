@@ -755,7 +755,7 @@ body{
     }
 }
 /* tablet */
-@media (max-width:1039px){
+@media (max-width:1023px){
     #my-info{
         padding-top: 100px;
     }
@@ -801,6 +801,10 @@ body{
     }
     #nav li{
         width: 120px;
+    }
+    /* page */
+    .two-book.page .page-item p{
+        display: none;
     }
 }
 /* mobile */
@@ -903,6 +907,20 @@ body{
     #nav .title{
         font-size: .7em;
         padding-top: 4px !important;
+    }
+    /* page */
+    .two-book.page .page-item p{
+        display: none;
+    }
+    .page.two-book .entertain {
+        height: 230px;
+        max-height: 230px;
+    }.two-book.page .entertain .avatar {
+        min-width: 147px;
+        height: 205px;
+    }
+    .two-book.page .page-item h3{
+        display: none;
     }
 } 
 @media (max-width:739px) and (min-width:500px){
