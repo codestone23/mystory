@@ -942,7 +942,8 @@ body{
     #nav li:last-child{
         margin-right: 50px;
     }
-}book
+}
+/* book */
 @media (max-width:500px){
     #nav li{
         margin: 0;  
