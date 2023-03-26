@@ -690,7 +690,7 @@ body{
     color: #81c5f0;
     margin: 0 12px;
     border-radius: 50%;
-    padding: 10px 14px;
+    padding: 10px 15px;
 }
 .slide-page .number:hover{
     background-color: #00587C;
@@ -922,6 +922,9 @@ body{
     .two-book.page .page-item h3{
         display: none;
     }
+    .transfer-type .fa-solid{
+        font-size: 25px;
+    }
 } 
 @media (max-width:739px) and (min-width:500px){
     #nav li{
@@ -939,7 +942,7 @@ body{
     #nav li:last-child{
         margin-right: 50px;
     }
-}
+}book
 @media (max-width:500px){
     #nav li{
         margin: 0;  
