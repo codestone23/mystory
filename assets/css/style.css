@@ -949,6 +949,26 @@ body{
         height: 35px !important;
     }
 }
+@media (max-width:425px){
+    .two-book.page .entertain .avatar {
+        min-width: 140px;
+        height: 188px;
+    }
+    .page.two-book .entertain {
+        height: 210px;
+        max-height: 210px;
+    }
+}
+@media (max-width: 380px){
+    .two-book.page .entertain .avatar {
+        min-width: 119px;
+        height: 170px;
+    }
+    .page.two-book .entertain {
+        height: 200px;
+        max-height: 200px;
+    }
+}
 @keyframes nav-style-tablet {
     50%{
         transform: scale(1.07);
