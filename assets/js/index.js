@@ -209,16 +209,16 @@ const MY_STORY = {
           }
           // Show skill progress when scroll to view
 
-			    // let skillElementToTop =
-          // this.skillElement.getBoundingClientRect().top;
-          // if (skillElementToTop < window.innerHeight) {
-          //   this.skillElement.setAttribute(
-          //     "style",
-          //     "--animation-progress: skill-progress 1s forwards"
-          //   );
-          // } else {
-          //   this.skillElement.removeAttribute("style");
-          // }
+			    let skillElementToTop =
+          this.skillElement.getBoundingClientRect().top;
+          if (skillElementToTop < window.innerHeight) {
+            this.skillElement.setAttribute(
+              "style",
+              "--animation-progress: skill-progress 1s forwards"
+            );
+          } else {
+            this.skillElement.removeAttribute("style");
+          }
         }
     },
     // function handleSlider
