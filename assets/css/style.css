@@ -691,6 +691,7 @@ body{
     margin: 0 12px;
     border-radius: 50%;
     padding: 10px 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .slide-page .number:hover{
     background-color: #00587C;
@@ -718,8 +719,9 @@ body{
 .sub-item .page.active{
     display: block;
 }
-.transfer-type .fa-solid:hover{
-    color: #2daaf9;
+.transfer-type .fa-solid:not(.active):hover{
+    color: #4fb9fa;
+
 }
 
 /* book 2 */
@@ -735,21 +737,6 @@ body{
 .page.two-book .entertain .content p{
     -webkit-line-clamp: 4;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* pc */
 @media (min-width:1240px){
