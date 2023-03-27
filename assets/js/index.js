@@ -208,22 +208,136 @@ const MY_STORY = {
               nav.classList.remove("fixed");
           }
           // Show skill progress when scroll to view
-			    let skillElementToTop =
-          this.skillElement.getBoundingClientRect().top;
-          if (skillElementToTop < window.innerHeight) {
-            this.skillElement.setAttribute(
-              "style",
-              "--animation-progress: skill-progress 1s forwards"
-            );
-          } else {
-            this.skillElement.removeAttribute("style");
-          }
+
+			    // let skillElementToTop =
+          // this.skillElement.getBoundingClientRect().top;
+          // if (skillElementToTop < window.innerHeight) {
+          //   this.skillElement.setAttribute(
+          //     "style",
+          //     "--animation-progress: skill-progress 1s forwards"
+          //   );
+          // } else {
+          //   this.skillElement.removeAttribute("style");
+          // }
         }
     },
     // function handleSlider
     handleSlider: function(){
-        
-    }
+        let timeTransition = 500
+        let timeAutoNext = 7000
+
+        let _this = this
+        let slideItemLength = this.slideItems.length -2
+        let indexSlide = 1
+        let setAutoNext 
+        // create slide dot
+        let dotElement = handleSlideDot(slideItemLength)
+
+        // next,prev
+        this.nextSlide.onclick = () =>{
+          next();
+        }
+        this.prevSlide.onclick = () =>{
+          prev();
+        }
+        function next(){
+          indexSlide++
+          updateSlide();
+        }
+        function prev(){
+          indexSlide--
+          updateSlide();
+        }
+
+        // auto next slide
+        autoNextSlide();
+
+        // handle slide dot
+        function handleSlideDot(length){
+          // create dotElement
+          for(let i=0; i < length; i++){
+            let dotElement = document.createElement("span")
+            dotElement.classList.add("dot")
+            if(i === 0) dotElement.classList.add("active")
+            dotElement.onclick = () =>{
+              clearInterval(setAutoNext)
+              autoNextSlide();
+              // next slide
+              indexSlide = i + 1
+              updateSlide();
+            }
+            _this.slideDot.appendChild(dotElement);
+          }
+          return $$(".slide-dot .dot")
+        }
+        //  auto next
+        function autoNextSlide(){
+          setAutoNext = setTimeout(() => {
+            next();
+          }, timeAutoNext);
+        }
+        function updateSlide(){
+          // reset auto next slide
+          clearInterval(setAutoNext);
+          autoNextSlide();
+          // update style
+          Object.assign(_this.slideBar.style,{
+            transition: `transform ${timeTransition}ms linear`,
+            transform: `translateX(-${indexSlide * 100}%)`,
+          });
+          // active
+          _this.slideDot.querySelector(".dot.active").classList.remove("active")
+          if(indexSlide > slideItemLength){
+            dotElement[0].classList.add("active")
+          }else if(indexSlide <= 0){
+            dotElement[slideItemLength - 1].classList.add("active")
+          }else dotElement[indexSlide - 1].classList.add("active")
+          setTimeout(()=>{
+            if(indexSlide > slideItemLength){
+              indexSlide = 1;
+              Object.assign(_this.slideBar.style,{
+                transition: `transform 0ms linear`,
+                transform: `translateX(-${indexSlide * 100}%)`,
+              });
+            }
+          },timeTransition);
+        }
+        // handle drag slide
+        function handleDragSlide(){
+          _this.slideBar.onmousedown = _this.slideBar.ontouchstart =
+          function(e){
+            clearInterval(setAutoNext)
+
+            const xDragLocation =
+              e.x || Math.floor(e.touches[0].clientX);
+              const slideBarWidth = this.offsetWidth;
+              let deviant = 0
+              
+              this.onmousemove = this.ontouchmove = function(e){
+                  const currentXDragLocation =
+                    e.x || Math.floor(e.touches[0].clientX)
+                    deviant = currentXDragLocation - xDragLocation
+
+                    this.style = `transform: translateX(calc(-${
+                      indexSlide *100
+                    }% + ${deviant}px))`
+              }
+              this.onmouseup = this.onmouseleave
+               = this.ontouchend =
+                  function (){
+                    if(Math.abs(deviant) >= slideBarWidth / 3){
+                      deviant <0 ? next() : prev()
+                    }else{
+                      updateSlide();
+                    }
+                    this.onmousemove = this.onmouseup
+                    = this.onmouseleave = this.ontouchmove
+                     = this.ontouchend = null
+                  }
+          }
+        }      
+        handleDragSlide();
+      }
 };
 
 MY_STORY.start();

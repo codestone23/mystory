@@ -570,7 +570,7 @@ body{
 .skill .skill-progress + .skill-progress{
     margin-top: 24px;
 }
-@keyframes skill-progress {
+@keyframes skill-progress{
     0%{
         width: 10%;
     }
@@ -718,6 +718,10 @@ body{
 .sub-item .page.active{
     display: block;
 }
+.transfer-type .fa-solid:hover{
+    color: #2daaf9;
+}
+
 /* book 2 */
 .two-book .page-item{
     display: none;
@@ -726,7 +730,7 @@ body{
     display: block;
 }
 .page.two-book .entertain{
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .page.two-book .entertain .content p{
     -webkit-line-clamp: 4;
