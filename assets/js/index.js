@@ -57,7 +57,6 @@ const MY_STORY = {
       this.handlePageOne();
       this.handlePageTwo();
       this.handleTransferPage();
-      this.handlePage();
     },
     // transfer page
     handleTransferPage:function(){
