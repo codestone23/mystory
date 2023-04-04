@@ -215,6 +215,7 @@ body{
 }
 .content-item.active{
     display: block;
+    animation: transferPage .5s linear ;
 }
 .content-item .sub-item{
     margin-top: 24px;
@@ -611,6 +612,8 @@ body{
 }
 .big-page .page.active{
     display: block;
+    animation: transferPage .5s linear ;
+    /* transition: display .5s linear; */
 }
 .page .entertain{
     height: 200px;
@@ -647,6 +650,7 @@ body{
 }
 .page .page-item.active{
     display: block;
+    animation: transferPage .5s linear ;
 }
 /* transfer */
 .sub-item .transfer-type{
@@ -976,6 +980,14 @@ body{
     }
     100%{
         width: var(--percent);
+    }
+}
+@keyframes transferPage{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
 
