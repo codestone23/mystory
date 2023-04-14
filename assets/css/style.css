@@ -246,7 +246,7 @@ body{
     height: 3px;
     background: linear-gradient(90deg,#1a2a6c, #b21f1f, #fdbb2d);
 }
-.sub-item #button{
+.sub-item .button{
     position: relative;
     width: fit-content;
     padding: 12px;
@@ -257,13 +257,13 @@ body{
     display: none;
     transition: all .5s linear;
 }
-.sub-item #button:hover{
+.sub-item .button:hover{
     
     background-color: #00587C;
     cursor: pointer;
     
 }
-#button.button-down::after{
+.button.button-down::after{
     content: ' \f0d7';
     font-family: 'FontAwesome';
     position:absolute;
@@ -272,7 +272,7 @@ body{
     color: #00587C;
     transform: translateX(-35%) translateY(230%); 
 }
-#button.button-down::before{
+.button.button-down::before{
     content: ' \f141';
     font-family: 'FontAwesome';
     position:absolute;
@@ -281,7 +281,7 @@ body{
     color: #000000;
     transform: translateX(-35%) translateY(-150%); 
 }
-#button.button-up::after{
+.button.button-up::after{
     content: ' \f0d8';
     font-family: 'FontAwesome';
     position:absolute;
@@ -749,7 +749,7 @@ body{
 
 @media (max-width:739px){
     /* more */
-    .sub-item #button{
+    .sub-item .button{
         display: block;
     }
     .hide-item{
